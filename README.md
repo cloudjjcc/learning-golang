@@ -1,2 +1,4 @@
-# go-exercises
-go 练习题
+# learning-golang 
++ 习题
++ 笔记
+
