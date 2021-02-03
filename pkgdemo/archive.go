@@ -1,15 +1,10 @@
-package main
+package pkgdemo
 
 import (
 	"archive/tar"
 	"bytes"
 	"fmt"
 )
-
-func main() {
-	demoTar()
-	demoZip()
-}
 
 func demoZip() {
 }

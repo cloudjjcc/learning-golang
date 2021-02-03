@@ -1,4 +1,4 @@
-package main
+package pkgdemo
 
 import (
 	"bufio"
@@ -6,10 +6,6 @@ import (
 	"os"
 	"strings"
 )
-
-func main() {
-	demoScanner()
-}
 
 func demoScanner() {
 	// 人为输入源。
