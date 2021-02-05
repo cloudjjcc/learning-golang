@@ -73,3 +73,12 @@ func Test_typeConvention(t *testing.T) {
 	str := "hello world"
 	fmt.Printf("%T,%s", str[:], []byte(str))
 }
+func TestRuneToString(t *testing.T) {
+	fmt.Println(string(rune(65)), string(rune(27494)))
+}
+
+func TestStrSlice(t *testing.T) {
+	str := "hi,小明"
+	str1 := str[:4]
+	fmt.Printf("%T,%v", str1, str1)
+}

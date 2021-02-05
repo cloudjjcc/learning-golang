@@ -191,3 +191,20 @@ type StringHeader struct {
 
 字符串和 `[]byte` 中的内容虽然一样，但是字符串的内容是只读的，我们不能通过下标或者其他形式改变其中的数据，而 `[]byte` 中的内容是可以读写的。不过无论从哪种类型转换到另一种都需要拷贝数据，而内存拷贝的性能损耗会随着字符串和 `[]byte` 长度的增长而增长。
 
+
+
+```go
+str:="hello,小明"
+// string to bytes
+bs:=[]bytes(str)
+// bytes to string
+str=string(bs)
+// string to runes
+rs:=[]rune(str)
+//  runes to string
+str=string(rs)
+// rune to string
+str=string(rune(65))
+
+```
+
