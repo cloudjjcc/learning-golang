@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strings"
 	"testing"
+	"unsafe"
 )
 
 func TestStrAdd(t *testing.T) {
@@ -81,4 +82,12 @@ func TestStrSlice(t *testing.T) {
 	str := "hi,小明"
 	str1 := str[:4]
 	fmt.Printf("%T,%v", str1, str1)
+}
+
+func TestStrSize(t *testing.T) {
+	str := "hi"
+	str2 := "hello world"
+	str3 := "小明"
+	fmt.Printf("%d,%d,%d\n", unsafe.Sizeof(str), unsafe.Sizeof(str2), unsafe.Sizeof(str3))
+	fmt.Printf("%p,%p,%p\n", &str, &str2, &str3)
 }

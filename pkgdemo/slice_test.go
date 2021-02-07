@@ -24,3 +24,11 @@ func TestAppend(t *testing.T) {
 	sli2 := append(sli, 5)
 	fmt.Printf("sli2:(data_addr:%p，type_addr:%p,cap:%d)\n", sli2, &sli2, cap(sli2))
 }
+
+func TestCopy(t *testing.T) {
+	src := []string{"hello", "world", "小明"}
+	dst := make([]string, 3)
+	copy(dst, src)
+	fmt.Printf("src_data_addr:%p,dst_data_addr:%p\n", src, dst)
+	fmt.Println(dst)
+}

@@ -72,3 +72,15 @@ sli2:(data_addr:0xc0000a0030，type_addr:0xc0000b60e0,cap:6)
 
 可以利用copy函数进行切片深拷贝
 
+```go
+src := []string{"hello", "world", "小明"}
+dst := make([]string, 3)
+copy(dst, src)
+fmt.Printf("src_data_addr:%p,dst_data_addr:%p\n",src,dst)
+fmt.Println(dst)
+/* 输出
+src_data_addr:0xc00007c3c0,dst_data_addr:0xc00007c3f0
+[hello world 小明]
+*/
+```
+
