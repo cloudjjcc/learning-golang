@@ -15,10 +15,7 @@ func TestSelect(t *testing.T) {
 	})
 	for {
 		select {
-		case ts, ok := <-ticker.C:
-			if !ok {
-				return
-			}
+		case ts := <-ticker.C:
 			ch <- ts.String()
 		case msg := <-ch:
 			fmt.Println(msg)
@@ -27,4 +24,27 @@ func TestSelect(t *testing.T) {
 			time.Sleep(100 * time.Millisecond)
 		}
 	}
+}
+
+func TestCloseChan(t *testing.T) {
+	ch := make(chan time.Time, 1)
+	go func() {
+		ticker := time.NewTicker(1 * time.Second)
+		for {
+			select {
+			case v := <-ticker.C:
+				ch <- v
+			case val, ok := <-ch:
+				if !ok {
+					fmt.Println("not ok")
+					continue
+				}
+				fmt.Println(val)
+			}
+		}
+	}()
+	time.AfterFunc(3*time.Second, func() {
+		close(ch)
+	})
+	select {}
 }
