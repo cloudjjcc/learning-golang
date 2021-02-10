@@ -48,3 +48,12 @@ func TestCloseChan(t *testing.T) {
 	})
 	select {}
 }
+
+func TestSendNilChan(t *testing.T) {
+	var ch chan int
+	go func() {
+		fmt.Println("received:", <-ch)
+	}()
+	ch <- 1 // will block forever
+	fmt.Println("exit")
+}
