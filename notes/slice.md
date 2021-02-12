@@ -63,12 +63,30 @@ sli2:(data_addr:0xc0000a0030，type_addr:0xc0000b60e0,cap:6)
 扩容是为切片分配新的内存空间并拷贝原切片中元素的过程
 
 + 新容量计算
+
+  在分配内存空间之前需要先确定新的切片容量，运行时根据切片的当前容量选择不同的策略进行扩容：
+
+  1. 如果期望容量大于当前容量的两倍就会使用期望容量；
+  2. 如果当前切片的长度小于 1024 就会将容量翻倍；
+  3. 如果当前切片的长度大于 1024 就会每次增加 25% 的容量，直到新容量大于期望容量；
+
 + 内存对齐
+
+  需要根据切片中的元素大小对齐内存
+
++ 内存分配
+
+  调用`runtime.mallocgc` 方法分配内存
+
 + 拷贝切片
+
+  使用 [`runtime.memmove`](https://draveness.me/golang/tree/runtime.memmove) 将原数组内存中的内容拷贝到新申请的内存中。
 
 
 
 # 切片深拷贝
+
+
 
 可以利用copy函数进行切片深拷贝
 
@@ -83,4 +101,40 @@ src_data_addr:0xc00007c3c0,dst_data_addr:0xc00007c3f0
 [hello world 小明]
 */
 ```
+
+
+
+编译器会使用 [`runtime.slicecopy`](https://draveness.me/golang/tree/runtime.slicecopy) 替换运行期间调用的 `copy`，该函数的实现很简单：
+
+```go
+func slicecopy(to, fm slice, width uintptr) int {
+	if fm.len == 0 || to.len == 0 {
+		return 0
+	}
+	n := fm.len
+	if to.len < n {
+		n = to.len
+	}
+	if width == 0 {
+		return n
+	}
+	...
+
+	size := uintptr(n) * width
+	if size == 1 {
+		*(*byte)(to.array) = *(*byte)(fm.array)
+	} else {
+		memmove(to.array, fm.array, size)
+	}
+	return n
+}
+```
+
+无论是编译期间拷贝还是运行时拷贝，两种拷贝方式都会通过 [`runtime.memmove`](https://draveness.me/golang/tree/runtime.memmove) 将整块内存的内容拷贝到目标的内存区域中：
+
+![golang-slice-copy](https://img.draveness.me/2019-02-20-golang-slice-copy.png)
+
+**语言切片的拷贝**
+
+相比于依次拷贝元素，[`runtime.memmove`](https://draveness.me/golang/tree/runtime.memmove) 能够提供更好的性能。需要注意的是，整块拷贝内存仍然会占用非常多的资源，在大切片上执行拷贝操作时一定要注意对性能的影响。
 
