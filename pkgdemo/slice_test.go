@@ -32,3 +32,9 @@ func TestCopy(t *testing.T) {
 	fmt.Printf("src_data_addr:%p,dst_data_addr:%p\n", src, dst)
 	fmt.Println(dst)
 }
+func TestSliceCap(t *testing.T) {
+	slice := make([]int, 0, 8)
+	sli := slice[2:3]
+	sli2 := sli[1:5]
+	fmt.Println(sli2)
+}

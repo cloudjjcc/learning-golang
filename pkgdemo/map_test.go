@@ -32,3 +32,11 @@ func TestOp(t *testing.T) {
 	}
 
 }
+func TestMapAddr(t *testing.T) {
+	m := make(map[int]int)
+	fn := func(mm map[int]int) {
+		fmt.Printf("%p,%p\n", mm, &mm)
+	}
+	fn(m)
+	fmt.Printf("%p,%p\n", m, &m)
+}

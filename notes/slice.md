@@ -20,7 +20,7 @@ type SliceHeader struct {
 
 
 
-# 初始化
+# 创建切片
 
 ```go
 // 从数组创建切片 等同于切片字面量创建sli:=[]int{1,2,3}
@@ -30,7 +30,13 @@ sli := arr[:]
 sli2 := sli[1:]
 fmt.Printf("arr:(%p,%T),sli:(%p,%T),sli2:(%p,%T)", &arr, arr, sli, sli,sli2,sli2)
 // arr:(0xc00001e240,[3]int),sli:(0xc00001e240,[]int),sli2:(0xc00001e248,[]int)
+// 通过make创建
+sli3:=make([]int,0,5)
+// 通过new创建
+sli4:=new([]int)
 ```
+
+
 
 
 
@@ -137,4 +143,28 @@ func slicecopy(to, fm slice, width uintptr) int {
 **语言切片的拷贝**
 
 相比于依次拷贝元素，[`runtime.memmove`](https://draveness.me/golang/tree/runtime.memmove) 能够提供更好的性能。需要注意的是，整块拷贝内存仍然会占用非常多的资源，在大切片上执行拷贝操作时一定要注意对性能的影响。
+
+
+
+
+
+# nil切片和空切片
+
+```go
+	var sli []int//nil 切片
+	fmt.Printf("%v,%p,%p\n", sli, sli, &sli)
+	sli2 := []int{}//空切片
+	fmt.Printf("%v,%p,%p\n", sli2, sli2, &sli2)
+	sli3 := make([]int, 0)//空切片
+	fmt.Printf("%v,%p,%p\n", sli3, sli3, &sli3)
+/*
+[],0x0,0xc00000e120
+[],0x1852ed8,0xc00000e140
+[],0x1852ed8,0xc00000e1a0
+*/
+```
+
+nil切片的数组指针为nil
+
+空切片的数组指针为zerobase
 

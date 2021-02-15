@@ -47,5 +47,24 @@ f(arr)// func f([3]int)
 ```
 
 + 编译时检查
+
+  Go 语言中可以在编译期间的静态类型检查判断数组越界，[`cmd/compile/internal/gc.typecheck1`](https://draveness.me/golang/tree/cmd/compile/internal/gc.typecheck1) 会验证访问数组的索引
+
+  1. 访问数组的索引是非整数时，报错 “non-integer array index %v”；
+  2. 访问数组的索引是负数时，报错 “invalid array index %v (index must be non-negative)"；
+  3. 访问数组的索引越界时，报错 “invalid array index %v (out of bounds for %d-element array)"；
+
 + 运行时检查
+
+  Go 语言为数组的访问操作生成了判断数组上限的指令 `IsInBounds` 以及当条件不满足时触发程序崩溃的 `PanicBounds` 指令
+
+对数组的访问和赋值需要同时依赖编译器和运行时，它的大多数操作在[编译期间](https://draveness.me/golang/docs/part1-prerequisite/ch02-compile/golang-compile-intro/)都会转换成直接读写内存，在中间代码生成期间，编译器还会插入运行时方法 [`runtime.panicIndex`](https://draveness.me/golang/tree/runtime.panicIndex)调用防止发生越界错误。
+
+
+
+
+
+# 什么时候用数组
+
+TODO
 

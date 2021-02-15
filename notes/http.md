@@ -1,5 +1,13 @@
 # http1.1
 
+默认Connection:keep-alive,得到http响应并不断开连接，除非指明Connection:close
+
+同一个tcp连接只有在上一个http请求完成后才能发送下一个请求
+
+
+
+
+
 
 
 
