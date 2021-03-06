@@ -1,14 +1,8 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //一个整型数组里除了两个数字之外，其他的数字都出现了两次。
 //请写程序找出这两个只出现一次的数字。
-
-func main() {
-	fmt.Println(findOnceNum([]int{1, 2, 2, 3, 4, 4}))
-}
 
 func findOnceNum(arr []int) []int {
 	if len(arr) < 2 {

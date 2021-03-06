@@ -1,10 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	fmt.Println(getLeastNums([]int{4, 5, 1, 6, 2, 7, 3, 8}, 4))
-}
+package nowcoder
 
 func getLeastNums(arr []int, k int) []int {
 	if len(arr) < k {

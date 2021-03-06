@@ -1,12 +1,7 @@
-package main
+package nowcoder
 
 //题目描述
 //需要保证奇数和奇数，偶数和偶数之间的相对位置不变，这和书本不太一样。
-
-func main() {
-	testArr := []int{1, 2, 3, 4, 5, 6}
-	reOrderEvenOdd(testArr)
-}
 
 func reOrderEvenOdd(arr []int) {
 	odd := make([]int, 0)

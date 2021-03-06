@@ -1,18 +1,12 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
 //题目描述
 //输入一棵二叉树，求该树的深度。
 //从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
-
-func main() {
-	tree := datastructures.BuildTreeFromArray([]interface{}{1, 2, 3, 4, 5, 6})
-	fmt.Println(getTreeDepth(tree))
-}
 
 // h(root)=max(h(root.left),h(root.right))+1
 func getTreeDepth(tree *datastructures.TestTreeNode) int {

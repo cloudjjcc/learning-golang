@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 import (
 	"fmt"
@@ -19,15 +19,6 @@ import (
 //来源：力扣（LeetCode）
 //链接：https://leetcode-cn.com/problems/the-dining-philosophers
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-func main() {
-	go wantsToEat(0)
-	go wantsToEat(1)
-	go wantsToEat(2)
-	go wantsToEat(3)
-	go wantsToEat(4)
-	select {}
-}
 
 var forks [5]atomic.Int32
 var pCh = make(chan struct{}, 4)

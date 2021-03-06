@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package nowcoder
 
 //题目描述
 //给定一个无序数组，包含正数、负数和0，要求从中找出3个数的乘积，使得乘积最大，
@@ -12,11 +8,6 @@ import (
 //第二行为n个以空格隔开的整数，分别为A1,A2, … ,An
 //输出描述:
 //满足条件的最大乘积
-
-func main() {
-	testArr := []int{0, -1, 2, 3, -3, 9}
-	fmt.Println(maxProduct(testArr))
-}
 
 // 最大的乘积：
 // 最大的三个非零数

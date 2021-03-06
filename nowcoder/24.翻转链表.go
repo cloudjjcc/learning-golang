@@ -1,28 +1,8 @@
-package main
-
-import "fmt"
+package nowcoder
 
 type lnode struct {
 	data interface{}
 	next *lnode
-}
-
-func main() {
-	list := &lnode{
-		data: 0,
-		next: nil,
-	}
-	// 构建链表
-	cur := list
-	for i := 1; i < 10; i++ {
-		cur.next = &lnode{
-			data: i,
-			next: nil,
-		}
-		cur = cur.next
-	}
-	newlist := ReverseList(list)
-	fmt.Println(newlist)
 }
 
 func ReverseList(list *lnode) *lnode {

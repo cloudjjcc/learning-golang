@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 //给定整数数组 A，每次 move 操作将会选择任意 A[i]，并将其递增 1。
 //返回使 A 中的每个值都是唯一的最少操作次数。
@@ -8,10 +6,6 @@ import "fmt"
 //来源：力扣（LeetCode）
 //链接：https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-func main() {
-	fmt.Println(minIncrementForUnique([]int{3, 2, 1, 2, 1, 7}))
-}
 
 func minIncrementForUnique(arr []int) int {
 	count := make([]int, 80000)

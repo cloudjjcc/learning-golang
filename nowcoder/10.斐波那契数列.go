@@ -1,12 +1,6 @@
-package main
-
-import "fmt"
+package nowcoder
 
 // 求斐波那契数列的第 n 项，n <= 39
-func main() {
-	fmt.Println(Fibonacci(30))
-	fmt.Println(Fibonacci2(30))
-}
 
 // 递归法实现，效率极低
 func Fibonacci(i int) int {

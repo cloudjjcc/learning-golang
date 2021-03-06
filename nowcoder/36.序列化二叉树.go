@@ -1,4 +1,4 @@
-package main
+package nowcoder
 
 import (
 	"fmt"
@@ -14,12 +14,6 @@ import (
 //序列化的结果是一个字符串，序列化时通过 某种符号表示空节点（#），
 //以 ！ 表示一个结点值的结束（value!）。
 //二叉树的反序列化是指：根据某种遍历顺序得到的序列化字符串结果str，重构二叉树。
-
-func main() {
-	testTreeStr := "0!#1!#2!#3!#4!#"
-	tree := deserializable([]byte(testTreeStr))
-	fmt.Println(string(serializable(tree)))
-}
 
 // 序列化二叉树
 func serializable(tree *datastructures.TestTreeNode) []byte {

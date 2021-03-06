@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
@@ -26,10 +24,4 @@ func rebuildBinaryTree(pre []int, in []int) *TreeNode {
 		}
 	}
 	return root
-}
-func main() {
-	pre := []int{1, 2, 4, 7, 3, 5, 6, 8}
-	in := []int{4, 7, 2, 1, 5, 3, 8, 6}
-	tree := rebuildBinaryTree(pre, in)
-	fmt.Println(tree)
 }

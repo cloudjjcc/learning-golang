@@ -1,3 +1,48 @@
+# http请求结构
+
+状态行、请求头、消息主体。类似于下面这样：
+
+```
+<method> <request-URL> <version>
+<headers>
+
+<entity-body>
+```
+
+
+
+1. GET 用于信息获取，而且应该是安全的 和 幂等的。
+
+   所谓安全的意味着该操作用于获取信息而非修改信息。换句话说，GET 请求一般不应产生副作用。就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不会影响资源的状态。
+
+   幂等的意味着对同一 URL 的多个请求应该返回同样的结果。
+
+   GET 请求报文示例：
+
+   ```
+    GET /books/?sex=man&name=Professional HTTP/1.1
+    Host: www.example.com
+    User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
+    Gecko/20050225 Firefox/1.0.1
+    Connection: Keep-Alive
+   ```
+
+2. POST 表示可能修改变服务器上的资源的请求。
+
+   ```
+    POST / HTTP/1.1
+    Host: www.example.com
+    User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
+    Gecko/20050225 Firefox/1.0.1
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 40
+    Connection: Keep-Alive
+   
+    sex=man&name=Professional  
+   ```
+
+
+
 # http1.1
 
 默认Connection:keep-alive,得到http响应并不断开连接，除非指明Connection:close

@@ -1,7 +1,6 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -20,11 +19,6 @@ import (
 //
 //数组长度不超过1000。
 //数组里整数的范围为 [0, 1000]。
-
-func main() {
-	testArr := []int{4, 6, 7, 3}
-	fmt.Println(triangleCount(testArr))
-}
 
 func triangleCount(arr []int) int {
 	if len(arr) < 3 {

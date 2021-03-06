@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //小明很喜欢数学,有一天他在做数学作业时,要求计算出9~16的和,他马上就写出了正确答案是100。
@@ -10,10 +8,6 @@ import "fmt"
 //输出描述:
 //输出所有和为S的连续正数序列。
 //序列内按照从小至大的顺序，序列间按照开始数字从小到大的顺序
-
-func main() {
-	fmt.Println(findContinuousSequence(200))
-}
 
 // 双指针法
 func findContinuousSequence(n int) [][]int {

@@ -1,7 +1,6 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
@@ -9,23 +8,6 @@ import (
 //在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，
 //重复的结点不保留，返回链表头指针。
 //例如，链表1->2->3->3->4->4->5 处理后为 1->2->5
-
-func main() {
-	list := &datastructures.ListNode{Value: 0}
-	a := &datastructures.ListNode{Value: 1}
-	b := &datastructures.ListNode{Value: 2}
-	c := &datastructures.ListNode{Value: 2}
-	d := &datastructures.ListNode{Value: 3}
-	e := &datastructures.ListNode{Value: 3}
-	f := &datastructures.ListNode{Value: 4}
-	list.Next = a
-	a.Next = b
-	b.Next = c
-	c.Next = d
-	d.Next = e
-	e.Next = f
-	fmt.Println(deleteDuplicate(list))
-}
 
 func deleteDuplicate(list *datastructures.ListNode) *datastructures.ListNode {
 	if list == nil {

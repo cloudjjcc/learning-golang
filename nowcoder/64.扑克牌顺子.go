@@ -1,7 +1,6 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -17,10 +16,6 @@ import (
 //现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何，
 //如果牌能组成顺子就输出true，否则就输出false。
 //为了方便起见,你可以认为大小王是0。
-
-func main() {
-	fmt.Println(isContinuous([]int{1, 3, 4, 5, 0}))
-}
 
 func isContinuous(arr []int) bool {
 	if len(arr) < 5 {

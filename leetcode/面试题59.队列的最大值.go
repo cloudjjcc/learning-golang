@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 func main() {
 	queue := Constructor()

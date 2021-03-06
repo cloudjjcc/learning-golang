@@ -1,7 +1,6 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -11,11 +10,6 @@ import (
 //来源：力扣（LeetCode）
 //链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-func main() {
-	prices := []int{7, 1, 5, 3, 6, 4}
-	fmt.Println(maxProfit(prices))
-}
 
 func maxProfit(prices []int) int {
 	if len(prices) < 2 {

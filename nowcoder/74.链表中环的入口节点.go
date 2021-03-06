@@ -1,27 +1,11 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
 //题目描述
 //给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
-
-func main() {
-	testNode := &datastructures.ListNode{Value: 0}
-	a := &datastructures.ListNode{Value: 1}
-	b := &datastructures.ListNode{Value: 2}
-	c := &datastructures.ListNode{Value: 3}
-	d := &datastructures.ListNode{Value: 4}
-	testNode.Next = a
-	a.Next = b
-	b.Next = c
-	c.Next = d
-	d.Next = a
-	fmt.Println(entryNodeOfLoop(testNode).Value)
-	fmt.Println(entryNodeOfLoop2(testNode).Value)
-}
 
 // 辅助空间
 func entryNodeOfLoop(node *datastructures.ListNode) *datastructures.ListNode {

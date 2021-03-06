@@ -1,13 +1,9 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"strconv"
 )
 
-func main() {
-	fmt.Println(compressString("aabcccccaaa"))
-}
 func compressString(str string) string {
 	if len(str) == 0 {
 		return ""

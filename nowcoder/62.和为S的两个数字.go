@@ -1,10 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	fmt.Println(findNumsWithSum([]int{1, 2, 3, 4, 5, 6, 7}, 10))
-}
+package nowcoder
 
 func findNumsWithSum(arr []int, sum int) []int {
 	if len(arr) <= 1 {

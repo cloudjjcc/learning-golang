@@ -1,4 +1,4 @@
-package main
+package nowcoder
 
 //题目描述
 //给定一个数组A[0,1,...,n-1],请构建一个数组B[0,1,...,n-1],

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 //排排坐，分糖果。
 //我们买了一些糖果 candies，打算把它们分给排好队的 n = num_people 个小朋友。
@@ -12,11 +10,6 @@ import "fmt"
 //来源：力扣（LeetCode）
 //链接：https://leetcode-cn.com/problems/distribute-candies-to-people
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-func main() {
-	fmt.Println(distributeCandies(7, 3))
-}
-
 // 暴力法求解
 func distributeCandies(candies int, peopleNum int) []int {
 	res := make([]int, peopleNum)

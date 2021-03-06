@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，
@@ -8,11 +6,6 @@ import "fmt"
 //请你把其循环左移K位后的序列输出。
 //例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。
 //是不是很简单？OK，搞定它！
-
-func main() {
-	fmt.Println(leftRotateString("abcXYZdef", 12))
-	fmt.Println(leftRotateString2("abcXYZdef", 12))
-}
 
 // 利用切片
 // 额外空间 O(n)

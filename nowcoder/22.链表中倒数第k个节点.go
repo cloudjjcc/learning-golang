@@ -1,27 +1,8 @@
-package main
-
-import "fmt"
+package nowcoder
 
 type linkedNode struct {
 	data interface{}
 	next *linkedNode
-}
-
-func main() {
-	list := &linkedNode{
-		data: 0,
-		next: nil,
-	}
-	// 构建链表
-	cur := list
-	for i := 1; i < 10; i++ {
-		cur.next = &linkedNode{
-			data: i,
-			next: nil,
-		}
-		cur = cur.next
-	}
-	fmt.Println(findKthToTail(list, 3).data)
 }
 
 // 查找链表中的倒数第k个节点

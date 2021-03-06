@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //地上有一个 m 行和 n 列的方格。
@@ -9,9 +7,6 @@ import "fmt"
 //例如，当 k 为 18 时，机器人能够进入方格 (35,37)，因为 3+5+3+7=18。
 //但是，它不能进入方格 (35,38)，因为 3+5+3+8=19。
 //请问该机器人能够达到多少个格子？
-func main() {
-	fmt.Println(moveCount(15, 100, 1))
-}
 
 func moveCount(k int, rows int, cols int) int {
 	if k == 0 {

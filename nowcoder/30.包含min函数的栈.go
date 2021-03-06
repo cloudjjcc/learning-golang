@@ -1,26 +1,11 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
 //题目描述
 //定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的 min 函数。
-
-func main() {
-	s := NewMyStack()
-	s.Push(10)
-	s.Push(2)
-	s.Push(3)
-	s.Push(3)
-	s.Push(1)
-	s.Push(9)
-	fmt.Println(s.Min())
-	s.Pop()
-	s.Pop()
-	fmt.Println(s.Min())
-}
 
 // 利用辅助栈
 type MyStack struct {

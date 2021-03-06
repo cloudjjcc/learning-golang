@@ -1,21 +1,13 @@
-package main
+package nowcoder
 
 import (
 	"errors"
-	"fmt"
 	"math"
-	"strconv"
 )
 
 //题目描述
 //将一个字符串转换成一个整数，要求不能使用字符串转换整数的库函数。
 //数值为0或者字符串不是一个合法的数值则返回0
-
-func main() {
-	testStr := "-111111111111111111111111"
-	fmt.Println(myitoa(testStr))
-	fmt.Println(strconv.Atoi(testStr))
-}
 
 func myitoa(str string) (r int, err error) {
 	// empty string

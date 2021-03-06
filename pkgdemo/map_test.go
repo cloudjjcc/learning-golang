@@ -28,7 +28,7 @@ func TestOp(t *testing.T) {
 	}
 	delete(m, "math")
 	if v, ok := m["math"]; ok {
-		fmt.Printf("math score is:%d", v)
+		fmt.Printf("math scoe is:%d", v)
 	}
 
 }

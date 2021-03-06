@@ -1,24 +1,11 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
 //给定一个带有头结点 head 的非空单链表，返回链表的中间结点。
 //如果有两个中间结点，则返回第二个中间结点。
-
-func main() {
-	list := new(datastructures.ListNode)
-	cur := list
-	for i := 1; i <= 5; i++ {
-		cur.Next = &datastructures.ListNode{
-			Value: i,
-		}
-		cur = cur.Next
-	}
-	fmt.Println(middleNode(list.Next))
-}
 
 func middleNode(list *datastructures.ListNode) *datastructures.ListNode {
 	if list == nil {

@@ -1,7 +1,6 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
@@ -14,10 +13,6 @@ import (
 //规则 3 ：非英文字母的其它字符保持原来的位置。
 //如，输入： By?e 输出： Be?y
 //注意有多组测试数据，即输入有多行，每一行单独处理（换行符隔开的表示不同行）
-
-func main() {
-	fmt.Println(getResult("By?efaxzsdetffumnn677mncff"))
-}
 
 func getResult(s string) string {
 	queue := &datastructures.Queue{}

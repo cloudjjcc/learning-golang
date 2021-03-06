@@ -1,15 +1,8 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
-
-func main() {
-	tree1 := datastructures.BuildTreeFromArray([]interface{}{0, 1, 2, 3, 4, 5, 6})
-	tree2 := datastructures.BuildTreeFromArray([]interface{}{2, 5, 6})
-	fmt.Println(hasSubTree(tree1, tree2))
-}
 
 func hasSubTree(tree1 *datastructures.TestTreeNode, tree2 *datastructures.TestTreeNode) bool {
 	if tree1 == nil || tree2 == nil {

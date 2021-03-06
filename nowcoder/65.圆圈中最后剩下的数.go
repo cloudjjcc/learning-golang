@@ -1,7 +1,6 @@
-package main
+package nowcoder
 
 import (
-	"fmt"
 	"github.com/cloudjjcc/go-exercises/datastructures"
 )
 
@@ -17,12 +16,6 @@ import (
 //并且拿到牛客名贵的“名侦探柯南”典藏版(名额有限哦!!^_^)。
 //请你试着想下,哪个小朋友会得到这份礼品呢？(注：小朋友的编号是从0到n-1)
 //如果没有小朋友，请返回-1
-
-func main() {
-	fmt.Println(lastRemaining(100, 3))
-	fmt.Println(lastRemaining2(100, 3))
-	fmt.Println(lastRemaining3(100, 3))
-}
 
 // 数学归纳法
 //        { 0,n=1

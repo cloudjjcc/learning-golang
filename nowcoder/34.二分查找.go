@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //对于一个有序数组，我们通常采用二分查找的方式来定位某一元素，请编写二分查找的算法，在数组中查找指定元素。
@@ -10,12 +8,6 @@ import "fmt"
 //测试样例：
 //[1,3,5,7,9],5,3
 //返回：1
-
-func main() {
-	testArr := []int{1, 11}
-	target := 11
-	fmt.Println(binarySearch(testArr, target))
-}
 
 // O(log n)
 func binarySearch(arr []int, target int) int {

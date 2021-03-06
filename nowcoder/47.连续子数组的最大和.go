@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。
@@ -9,10 +7,6 @@ import "fmt"
 //但是,如果向量中包含负数,是否应该包含某个负数,并期望旁边的正数会弥补它呢？
 //例如:{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。
 //给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)
-
-func main() {
-	fmt.Println(findGreatestSumOfSubArray([]int{6, -3, -2, 7, -15, 1, 2, 2}))
-}
 
 // 数组规律
 func findGreatestSumOfSubArray(arr []int) int {

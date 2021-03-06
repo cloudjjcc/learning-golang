@@ -1,19 +1,7 @@
-package main
-
-import (
-	"fmt"
-	"math"
-)
+package nowcoder
 
 //题目描述
 //给定一个 double 类型的浮点数 base 和 int 类型的整数 exponent，求 base 的 exponent 次方。
-
-func main() {
-	base := 2.0
-	exp := 120
-	fmt.Println(power(base, exp))
-	fmt.Println(math.Pow(base, float64(exp)))
-}
 
 // 快速幂算法
 // pow(x,n)=pow(x,n/2)*pow(x,n/2),x为偶数

@@ -1,13 +1,8 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //统计一个数字在排序数组中出现的次数。
 
-func main() {
-	fmt.Println(numOfK([]int{1, 2, 2, 3}, 2))
-}
 func numOfK(arr []int, k int) int {
 	if len(arr) == 0 {
 		return 0

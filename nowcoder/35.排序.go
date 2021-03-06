@@ -1,29 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
-
-func main() {
-	count := int(1e6)
-	testArr := make([]int, count)
-	rand.Seed(time.Now().Unix())
-	for i := 0; i < count-1; i++ {
-		testArr[i] = rand.Intn(10000)
-	}
-	start := time.Now()
-	//BubbleSort(testArr)
-	//InsertionSort(testArr)erwytrrewq	c
-	//ShellSort(testArr)
-	//SelectionSort(testArr)
-	//HeapSort(testArr)
-	//MergeSort(testArr)
-	QuickSort(testArr)
-	//sort.Sort(sortArr(testArr))
-	fmt.Println(time.Since(start))
-}
+package nowcoder
 
 type sortArr []int
 
@@ -125,6 +100,7 @@ func HeapSort(arr []int) {
 		return
 	}
 	// build max heap
+	// 从最后一个非叶子节点开始
 	for i := N/2 - 1; i >= 0; i-- {
 		percDown(arr, i, N)
 	}
@@ -135,6 +111,8 @@ func HeapSort(arr []int) {
 }
 
 // 下滤
+// 使arr[i]为根的二叉堆保持堆序性
+// N为元素个数
 func percDown(arr []int, i int, N int) {
 	if N <= 1 {
 		return

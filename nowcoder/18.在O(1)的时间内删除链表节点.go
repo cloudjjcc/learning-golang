@@ -1,6 +1,3 @@
-package main
+package nowcoder
 
 // TODO
-func main() {
-
-}

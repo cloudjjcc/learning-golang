@@ -1,4 +1,4 @@
-package main
+package nowcoder
 
 import "fmt"
 
@@ -9,11 +9,6 @@ import "fmt"
 //{2, 3, 1, 0, 2, 5}
 //Output:
 //2
-func main() {
-	testNums := []int{4, 1, 1, 1, 2, 5}
-	PrintRepeatNum(testNums)
-	PrintRepeatNum2(testNums)
-}
 
 // 利用数组中的数只能在0~n-1范围解决问题
 // 时间复杂度O(n) 空间复杂度O(1)

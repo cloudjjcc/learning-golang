@@ -1,4 +1,4 @@
-package main
+package nowcoder
 
 import (
 	"fmt"
@@ -8,24 +8,6 @@ import (
 type node struct {
 	data interface{}
 	next *node
-}
-
-func main() {
-	list := &node{
-		data: 0,
-		next: nil,
-	}
-	// 构建链表
-	cur := list
-	for i := 1; i < 10; i++ {
-		cur.next = &node{
-			data: i,
-			next: nil,
-		}
-		cur = cur.next
-	}
-	//reversePrintList(list)
-	reversePrintList2(list)
 }
 
 // 递归实现

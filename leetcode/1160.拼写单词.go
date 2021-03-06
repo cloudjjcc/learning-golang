@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 //给你一份『词汇表』（字符串数组） words 和一张『字母表』（字符串） chars。
 //假如你可以用 chars 中的『字母』（字符）拼写出 words 中的某个『单词』（字符串），
@@ -10,10 +8,6 @@ import "fmt"
 //来源：力扣（LeetCode）
 //链接：https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-func main() {
-	fmt.Println(countCharacters([]string{"cat", "bt", "hat", "tree"}, "atach"))
-}
 
 func countCharacters(words []string, chars string) int {
 	if len(chars) == 0 || len(words) == 0 {

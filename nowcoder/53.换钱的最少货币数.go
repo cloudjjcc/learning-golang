@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package nowcoder
 
 //题目描述
 //给定数组arr，arr中所有的值都为正整数且不重复。
@@ -11,13 +9,6 @@ import "fmt"
 //第二行n个不重复的正整数，代表arr
 //输出描述:
 //输出一个整数，表示组成aim的最小货币数，无解时输出-1.
-func main() {
-	testCoins := []int{2, 5, 10}
-	fmt.Println(minCoinNum(testCoins, 8))
-	fmt.Println(minCoinNum(testCoins, 9))
-	fmt.Println(minCoinNum(testCoins, 10))
-	fmt.Println(minCoinNum(testCoins, 99))
-}
 
 //f(x)=min{f{x-i}+1},i ∈ coinFace
 func minCoinNum(coins []int, aim int) int {

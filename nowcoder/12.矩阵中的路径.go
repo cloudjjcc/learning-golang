@@ -1,4 +1,4 @@
-package main
+package nowcoder
 
 import "fmt"
 
@@ -12,12 +12,6 @@ import "fmt"
 var (
 	dir = [][]int{{-1, 0}, {0, 1}, {1, 0}, {0, -1}}
 )
-
-func main() {
-	matrix := [][]rune{{'a', 'b', 't', 'g'}, {'c', 'f', 'c', 's'}, {'j', 'd', 'e', 'h'}}
-	testPath := "bfcedh"
-	fmt.Println(hasPath(matrix, testPath))
-}
 
 // DFS (深度优先搜索)回溯法
 func hasPath(matrix [][]rune, path string) bool {
