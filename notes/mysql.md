@@ -4,6 +4,95 @@
 
 
 
+# InnoDB 存储引擎
+
+## 后台线程
+
+### IO thread
+
+insert buffer thread,log thread,read thread,write thread
+
+### master thread 
+
+### lock monitor thread 
+
+###  error monitor thread
+
+
+
+```sql
+SHOW ENGINE innodb STATUS --查看引擎状态
+
+```
+
+
+
+## 内存
+
+### buffer pool
+
+### Redo log buffer
+
+### Additional memory pool
+
+
+
+
+
+## 关键特性
+
+### 插入缓冲（insert buffer）
+
+1. 索引是辅助索引
+
+2. 索引不是唯一的
+
+
+
+### 两次写（double write）
+
+
+
+
+
+### 自适应hash索引
+
+
+
+
+
+### 日志文件
+
+#### 错误日志
+
+#### 慢查询日志
+
+#### 查询日志
+
+#### 二进制日志
+
+
+
+### 存储引擎文件
+
+#### 表空间文件
+
+*ibdata1*
+
+重做日志文件
+
+Ib_logfile0
+
+Ib_logfile1
+
+
+
+
+
+
+
+
+
 # 引擎
 
 InnorDB
