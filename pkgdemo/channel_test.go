@@ -57,3 +57,14 @@ func TestSendNilChan(t *testing.T) {
 	ch <- 1 // will block forever
 	fmt.Println("exit")
 }
+
+func TestChanExample1(t *testing.T) {
+	// send nil chan
+	var ch chan int
+	//ch <- 1
+	select {
+	case ch <- 1:
+	default:
+
+	}
+}
