@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 // 暴力 时间复杂度O(n)3 空间复杂度O(1)
 func longestPalindrome(s string) string {
 	max := 1
@@ -42,9 +40,6 @@ func longestPalindrome2(s string) string {
 			if j > len(s)-1 {
 				break
 			}
-			if s[i:j+1] == "xaabacxcabaax" {
-				fmt.Println("-----")
-			}
 			if s[i] == s[j] {
 				if l <= 3 {
 					d[i][j] = true
@@ -54,7 +49,6 @@ func longestPalindrome2(s string) string {
 			} else {
 				d[i][j] = false
 			}
-			fmt.Printf("%v:%v\n", s[i:j+1], d[i][j])
 			if d[i][j] && l > maxLen {
 				maxLen = l
 				maxi = i

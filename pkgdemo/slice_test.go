@@ -38,3 +38,7 @@ func TestSliceCap(t *testing.T) {
 	sli2 := sli[1:5]
 	fmt.Println(sli2)
 }
+
+func TestSliceAppend(t *testing.T) {
+
+}

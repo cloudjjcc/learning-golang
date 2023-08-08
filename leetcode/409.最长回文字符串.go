@@ -1,12 +1,6 @@
-package main
+package leetcode
 
-import "fmt"
-
-func main() {
-	fmt.Println(longestPalindrome("bananas"))
-}
-
-func longestPalindrome(str string) int {
+func longestPalindrome1(str string) int {
 	if len(str) == 0 {
 		return 0
 	}

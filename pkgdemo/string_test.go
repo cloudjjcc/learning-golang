@@ -3,6 +3,7 @@ package pkgdemo
 import (
 	"bytes"
 	"fmt"
+	"reflect"
 	"strings"
 	"testing"
 	"unsafe"
@@ -90,4 +91,19 @@ func TestStrSize(t *testing.T) {
 	str3 := "小明"
 	fmt.Printf("%d,%d,%d\n", unsafe.Sizeof(str), unsafe.Sizeof(str2), unsafe.Sizeof(str3))
 	fmt.Printf("%p,%p,%p\n", &str, &str2, &str3)
+}
+func TestStrIndex(t *testing.T) {
+	str := "hello world"
+	sh := *(*reflect.SliceHeader)(unsafe.Pointer(&str))
+	sh.Cap = len(str)
+	s := *(*[]byte)(unsafe.Pointer(&sh))
+	fmt.Printf("%s\n", s)
+	str1 := "abc"
+	str2 := "abc"
+	fmt.Printf("%p,%p,%p,%p\n", unsafe.StringData(str1), unsafe.StringData(str2), &str1, &str2)
+}
+
+func TestRune(t *testing.T) {
+	runes := []rune{'a', '好'}
+	fmt.Printf("%s", string(runes))
 }
