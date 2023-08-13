@@ -3,6 +3,7 @@ package pkgdemo
 import (
 	"fmt"
 	"testing"
+	"unsafe"
 )
 
 func TestMapInit(t *testing.T) {
@@ -39,4 +40,44 @@ func TestMapAddr(t *testing.T) {
 	}
 	fn(m)
 	fmt.Printf("%p,%p\n", m, &m)
+}
+
+func TestMapHeader(t *testing.T) {
+	m := make(map[int]byte)
+	m[1] = 'a'
+	m[2] = 'b'
+	m[3] = 'c'
+	m[4] = 'd'
+	h := *(**hmap)(unsafe.Pointer(&m))
+	v1 := h.buckets
+	v2 := (*bmap)(unsafe.Add(unsafe.Pointer(h.buckets), unsafe.Sizeof(*v1)))
+	v3 := (*bmap)(unsafe.Add(unsafe.Pointer(h.buckets), 2*unsafe.Sizeof(*v1)))
+	fmt.Printf("%v,%v,%v,size:%v\n", v1, v2, v3, unsafe.Sizeof(m))
+
+}
+
+// A header for a Go map.
+type hmap struct {
+	// Note: the format of the hmap is also encoded in cmd/compile/internal/gc/reflect.go.
+	// Make sure this stays in sync with the compiler's definition.
+	count     int // # live cells == size of map.  Must be first (used by len() builtin)
+	flags     uint8
+	B         uint8  // log_2 of # of buckets (can hold up to loadFactor * 2^B items)
+	noverflow uint16 // approximate number of overflow buckets; see incrnoverflow for details
+	hash0     uint32 // hash seed
+
+	buckets    *bmap          // array of 2^B Buckets. may be nil if count==0.
+	oldbuckets unsafe.Pointer // previous bucket array of half the size, non-nil only when growing
+	nevacuate  uintptr        // progress counter for evacuation (buckets less than this have been evacuated)
+
+	extra uintptr // optional fields
+}
+
+// A bucket for a Go map.
+type bmap struct {
+	topbits [8]uint8
+	keys    [8]int
+	values  [8]byte
+	pad     uintptr
+	//overflow uintptr
 }

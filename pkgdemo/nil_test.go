@@ -3,7 +3,6 @@ package pkgdemo
 import (
 	"fmt"
 	"testing"
-	"unsafe"
 )
 
 func TestNil(t *testing.T) {
@@ -12,9 +11,9 @@ func TestNil(t *testing.T) {
 	fmt.Printf("%p,%p\n", &arr, &arr2)
 	var i int
 	fmt.Printf("%p\n", &i)
-	ptr := uintptr(0x1852ed8)
-	intp := (*[]int)(unsafe.Pointer(ptr))
-	fmt.Printf("%v,%v\n", intp, *intp)
+	//ptr := uintptr(0x1852ed8)
+	//intp := (*[]int)(unsafe.Pointer(ptr))
+	//fmt.Printf("%v,%v\n", intp, *intp)
 	s := new(struct{})
 	fmt.Printf("%p,%p\n", s, &struct{}{})
 	var sli []int //nil 切片
@@ -25,4 +24,6 @@ func TestNil(t *testing.T) {
 	fmt.Printf("%v,%p,%p\n", sli3, sli3, &sli3)
 	sli4 := new([]int) //nil 切片
 	fmt.Printf("%v,%p,%p\n", sli4, *sli4, sli4)
+	var pp *int
+	fmt.Printf("%p\n", pp)
 }

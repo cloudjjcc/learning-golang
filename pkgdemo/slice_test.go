@@ -39,6 +39,9 @@ func TestSliceCap(t *testing.T) {
 	fmt.Println(sli2)
 }
 
-func TestSliceAppend(t *testing.T) {
-
+func TestSliceOp(t *testing.T) {
+	s1 := []int{1, 2, 3, 4, 5}
+	s2 := s1[:0]
+	t.Logf("%v,%v,%p,%p", s1, s2, s1, s2)
+	t.Log(cap(s2))
 }

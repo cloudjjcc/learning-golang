@@ -1,6 +1,7 @@
 package sort
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"
@@ -39,6 +40,14 @@ func TestSort(t *testing.T) {
 	}
 }
 func BenchmarkSort(b *testing.B) {
+	fns := map[string]func([]int){
+		"BubbleSort":    BubbleSort,
+		"SelectionSort": SelectionSort,
+		"InsertionSort": InsertionSort,
+		"MergeSort":     MergeSort,
+		"HeapSort":      HeapSort,
+		"QuickSort":     QuickSort,
+	}
 	buildArrFn := func(l int) []int {
 		arr := make([]int, l)
 		for i := 0; i < l; i++ {
@@ -46,10 +55,11 @@ func BenchmarkSort(b *testing.B) {
 		}
 		return arr
 	}
-	sortFn := QuickSort
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		sortFn(buildArrFn(100000))
+	for fnName, sortFn := range fns {
+		b.Run(fmt.Sprintf("%v", fnName), func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				sortFn(buildArrFn(10000))
+			}
+		})
 	}
-	b.ReportAllocs()
 }
