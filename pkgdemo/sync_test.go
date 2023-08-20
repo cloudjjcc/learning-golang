@@ -2,6 +2,7 @@ package pkgdemo
 
 import (
 	"github.com/stretchr/testify/assert"
+	"runtime"
 	"sync"
 	"sync/atomic"
 	"testing"
@@ -10,7 +11,7 @@ import (
 func TestMutex(t *testing.T) {
 	mutex := sync.Mutex{}
 	mutex.Lock()
-	mutex.TryLock()
+	//mutex.TryLock()
 	mutex.Unlock()
 	t.Logf("%v", &mutex)
 }
@@ -32,7 +33,7 @@ func TestAtomic(t *testing.T) {
 func TestPool(t *testing.T) {
 
 	pool := sync.Pool{
-		New: func() any {
+		New: func() interface{} {
 			return make([]int, 0)
 		},
 	}
@@ -49,4 +50,5 @@ func TestMap(t *testing.T) {
 	m.Store("a", "av")
 	v, _ := m.Load("a")
 	assert.Equal(t, "av", v.(string))
+	runtime.GC()
 }

@@ -43,16 +43,16 @@ func TestMapAddr(t *testing.T) {
 }
 
 func TestMapHeader(t *testing.T) {
-	m := make(map[int]byte)
-	m[1] = 'a'
-	m[2] = 'b'
-	m[3] = 'c'
-	m[4] = 'd'
-	h := *(**hmap)(unsafe.Pointer(&m))
-	v1 := h.buckets
-	v2 := (*bmap)(unsafe.Add(unsafe.Pointer(h.buckets), unsafe.Sizeof(*v1)))
-	v3 := (*bmap)(unsafe.Add(unsafe.Pointer(h.buckets), 2*unsafe.Sizeof(*v1)))
-	fmt.Printf("%v,%v,%v,size:%v\n", v1, v2, v3, unsafe.Sizeof(m))
+	//m := make(map[int]byte)
+	//m[1] = 'a'
+	//m[2] = 'b'
+	//m[3] = 'c'
+	//m[4] = 'd'
+	//h := *(**hmap)(unsafe.Pointer(&m))
+	//v1 := h.buckets
+	//v2 := (*bmap)(unsafe.Add(unsafe.Pointer(h.buckets), unsafe.Sizeof(*v1)))
+	//v3 := (*bmap)(unsafe.Add(unsafe.Pointer(h.buckets), 2*unsafe.Sizeof(*v1)))
+	//fmt.Printf("%v,%v,%v,size:%v\n", v1, v2, v3, unsafe.Sizeof(m))
 
 }
 
