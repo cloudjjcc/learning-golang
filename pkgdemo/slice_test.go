@@ -44,4 +44,23 @@ func TestSliceOp(t *testing.T) {
 	s2 := s1[:0]
 	t.Logf("%v,%v,%p,%p", s1, s2, s1, s2)
 	t.Log(cap(s2))
+	s3 := s2[0:0:2]
+	t.Log(cap(s3))
+}
+
+func TestSliceAppend(t *testing.T) {
+	s1 := []int{1, 2, 3, 4, 5, 6}
+	t.Logf("%p,len:%d,cap:%d", s1, len(s1), cap(s1))
+	_ = append(s1, 7)
+	t.Logf("%p,len:%d,cap:%d", s1, len(s1), cap(s1))
+	s1 = append(s1, 7)
+	t.Logf("%p,len:%d,cap:%d", s1, len(s1), cap(s1))
+	s2 := s1[1:2]
+	t.Logf("%p,len:%d,cap:%d", s2, len(s2), cap(s2))
+}
+
+func TestSliceEqual(t *testing.T) {
+	//s1:=[]int{1,2,3}
+	//s2:=[]int{1,2,3}
+	//t.Log(s1==s2)
 }
