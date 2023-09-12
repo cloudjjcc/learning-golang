@@ -1,0 +1,5 @@
+package pkgdemo
+
+func boolTest() {
+
+}
