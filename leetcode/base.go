@@ -36,3 +36,13 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
+func BuildTree(s []interface{}, r int) *TreeNode {
+	if r > len(s)-1 || s[r] == nil {
+		return nil
+	}
+	root := &TreeNode{Val: s[r].(int)}
+	root.Left = BuildTree(s, 2*r+1)
+	root.Right = BuildTree(s, 2*r+2)
+	return root
+}

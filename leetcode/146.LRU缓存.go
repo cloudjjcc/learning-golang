@@ -27,12 +27,12 @@ func NewLRUCache(capacity int) LRUCache {
 	}
 }
 
-func (c *LRUCache) Get(key int) int {
-	v, ok := c.cache[key]
+func (this *LRUCache) Get(key int) int {
+	v, ok := this.cache[key]
 	if !ok {
 		return -1
 	}
-	c.lru.moveToTail(v)
+	this.lru.moveToTail(v)
 	return v.val
 }
 func (list *metaList) remove(v *meta) {
@@ -76,30 +76,30 @@ func (list *metaList) removeHead() {
 		list.head.pre = nil
 	}
 }
-func (c *LRUCache) Print() string {
+func (this *LRUCache) Print() string {
 	sb := strings.Builder{}
-	for cur := c.lru.head; cur != nil; cur = cur.next {
+	for cur := this.lru.head; cur != nil; cur = cur.next {
 		sb.WriteString(fmt.Sprintf("%d->", cur.key))
 	}
 	return sb.String()
 }
-func (c *LRUCache) Put(key int, value int) {
+func (this *LRUCache) Put(key int, value int) {
 	// 更新
-	v, ok := c.cache[key]
+	v, ok := this.cache[key]
 	if ok {
 		v.val = value
-		c.lru.moveToTail(v)
+		this.lru.moveToTail(v)
 		return
 	}
-	if len(c.cache) == c.cap {
-		delete(c.cache, c.lru.head.key)
-		c.lru.removeHead()
+	if len(this.cache) == this.cap {
+		delete(this.cache, this.lru.head.key)
+		this.lru.removeHead()
 	}
 	//新增
 	ele := &meta{
 		key: key,
 		val: value,
 	}
-	c.lru.addToTail(ele)
-	c.cache[key] = ele
+	this.lru.addToTail(ele)
+	this.cache[key] = ele
 }
