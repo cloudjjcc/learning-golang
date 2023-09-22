@@ -7,13 +7,29 @@ import (
 )
 
 func TestMapInit(t *testing.T) {
-	m := map[string]int{}
+	//m := map[string]int{}
 	var m1 map[string]int
-	m2 := make(map[string]int)
-	fmt.Printf("m:%p,m1:%p,m2:%p\n", m, m1, m2)
-	m["math"] = 90
-	m1["math"] = 90 //panic: assignment to entry in nil map
-	m2["math"] = 90
+	fmt.Printf("%p,len:%d,size:%v,is nil:%t\n", m1, len(m1), unsafe.Sizeof(m1), m1 == nil)
+	fmt.Println(m1["a"])
+	//m1["a"] = 2
+	m2 := map[int]string{
+		1: "cat",
+		2: "dog",
+	}
+	for k, v := range m2 {
+		fmt.Println(k, v)
+	}
+	//m2 := make(map[string]int)
+	//fmt.Printf("m:%p,m1:%p,m2:%p\n", m, m1, m2)
+	//m["math"] = 90
+	//m1["math"] = 90 //panic: assignment to entry in nil map
+	//m2["math"] = 90
+	m := make(map[string]string)
+	m["a"] = "abcddd"
+	m3 := make(map[string]string, 100)
+	m3["a"] = "dsdsdds"
+	m3["b"] = "dadsd"
+	fmt.Printf("%d,%d", len(m), len(m3))
 }
 
 func TestOp(t *testing.T) {

@@ -64,3 +64,24 @@ func TestSliceEqual(t *testing.T) {
 	//s2:=[]int{1,2,3}
 	//t.Log(s1==s2)
 }
+func TestSliceInit(t *testing.T) {
+	a := [5]int{}
+	fmt.Printf("addr:%p,len:%d,cap:%d\n", &a, len(a), cap(a))
+	s1 := a[:]
+	fmt.Printf("addr:%p,len:%d,cap:%d\n", s1, len(s1), cap(s1))
+	s2 := s1[1:]
+	fmt.Printf("addr:%p,len:%d,cap:%d\n", s2, len(s2), cap(s2))
+	s3 := s1[1:2]
+	fmt.Printf("addr:%p,len:%d,cap:%d\n", s3, len(s3), cap(s3))
+	s4 := s1[1:2:3]
+	fmt.Printf("addr:%p,len:%d,cap:%d\n", s4, len(s4), cap(s4))
+
+	var ss []int
+	fmt.Printf("%p,%p,%d,%d,%t\n", &ss, ss, len(ss), cap(ss), ss == nil)
+	ss = append(ss, 1)
+	fmt.Printf("%p,%p,%d,%d\n", &ss, ss, len(ss), cap(ss))
+	fmt.Printf("%T\n", ss)
+	s6 := make([]int, 2, 6)
+	fmt.Printf("%p,%d,%d\n", s6, len(s6), cap(s6))
+
+}

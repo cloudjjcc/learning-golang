@@ -3,6 +3,7 @@ package pkgdemo
 import (
 	"bytes"
 	"fmt"
+	"reflect"
 	"strings"
 	"testing"
 	"unsafe"
@@ -104,5 +105,27 @@ func TestStrIndex(t *testing.T) {
 
 func TestRune(t *testing.T) {
 	runes := []rune{'a', '好'}
-	fmt.Printf("%s", string(runes))
+	fmt.Printf("%s\n", string(runes))
+
+	sb := strings.Builder{}
+	sb.Grow(11)
+	sb.WriteString("hello")
+	sb.WriteByte(' ')
+	sb.WriteString("world")
+	fmt.Println(sb.String())
+
+	a := "hello world"
+	b := []byte(a)
+	//c := string(b)
+	s := *(*reflect.SliceHeader)(unsafe.Pointer(&a))
+	s.Cap = len(a)
+	d := *(*[]byte)(unsafe.Pointer(&s))
+	//d[0] = 'j'
+	e := *(*string)(unsafe.Pointer(&b))
+	fmt.Printf("%v,%v\n", string(d), e)
+
+	aa := "hello world"
+	bb := []rune(aa)
+	cc := string(bb)
+	fmt.Printf("%s,%s,%s", aa, string(bb), cc)
 }
