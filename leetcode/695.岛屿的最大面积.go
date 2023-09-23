@@ -49,3 +49,44 @@ func dfs(grid [][]int, i int, j int, visited [][]bool) int {
 	}
 	return area
 }
+
+func maxAreaOfIsland2(grid [][]int) int {
+	m, n := len(grid), len(grid[0])
+	var dfs func(i, j int) int
+	dfs = func(i, j int) int {
+		grid[i][j] = 0
+		area := 1
+		// 上
+		if i-1 >= 0 && grid[i-1][j] == 1 {
+			area += dfs(i-1, j)
+		}
+		// 下
+		if i+1 < m && grid[i+1][j] == 1 {
+			area += dfs(i+1, j)
+		}
+		// 左
+		if j-1 >= 0 && grid[i][j-1] == 1 {
+			area += dfs(i, j-1)
+		}
+		// 右
+		if j+1 < n && grid[i][j+1] == 1 {
+			area += dfs(i, j+1)
+		}
+		return area
+	}
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+	ans := 0
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
+			if grid[i][j] == 1 {
+				ans = max(ans, dfs(i, j))
+			}
+		}
+	}
+	return ans
+}
