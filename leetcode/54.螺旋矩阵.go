@@ -2,58 +2,41 @@ package leetcode
 
 func spiralOrder(matrix [][]int) []int {
 	m, n := len(matrix), len(matrix[0])
-	right, down, left, up := n-1, m-1, 0, 1
-	i, j := 0, 0
-	direction := 0
-	step := func() bool {
-		switch direction {
-		case 0:
-			if j+1 > right {
-				return false
-			}
-			j++
-			if j == right {
-				right--
-				direction = 1
-			}
-		case 1:
-			if i+1 > down {
-				return false
-			}
-			i++
-			if i == down {
-				down--
-				direction = 2
-			}
-		case 2:
-			if j-1 < left {
-				return false
-			}
-			j--
-			if j == left {
-				left++
-				direction = 3
-			}
-		case 3:
-			if i-1 < up {
-				return false
-			}
-			i--
-			if i == up {
-				up++
-				direction = 0
-			}
+	right, down, left, up := n-1, m-1, 0, 0
+	ans := make([]int, 0, n*m)
+	for {
+		// 右
+		for i := left; i <= right; i++ {
+			ans = append(ans, matrix[up][i])
 		}
-		return true
-	}
-	ans := make([]int, 0, m*n)
-	ans = append(ans, matrix[0][0])
-	if j == right {
+		up++
+		if up > down {
+			break
+		}
+		// 下
+		for i := up; i <= down; i++ {
+			ans = append(ans, matrix[i][right])
+		}
 		right--
-		direction = 1
-	}
-	for step() {
-		ans = append(ans, matrix[i][j])
+		if right < left {
+			break
+		}
+		// 左
+		for i := right; i >= left; i-- {
+			ans = append(ans, matrix[down][i])
+		}
+		down--
+		if down < up {
+			break
+		}
+		// 上
+		for i := down; i >= up; i-- {
+			ans = append(ans, matrix[i][left])
+		}
+		left++
+		if left > right {
+			break
+		}
 	}
 	return ans
 }

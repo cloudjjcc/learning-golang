@@ -85,3 +85,11 @@ func TestSliceInit(t *testing.T) {
 	fmt.Printf("%p,%d,%d\n", s6, len(s6), cap(s6))
 
 }
+func TestSliceRange(t *testing.T) {
+	s := []int{1, 2, 3, 4, 5}
+	for i := range s {
+		s = append(s, i)
+		fmt.Println(len(s))
+	}
+	fmt.Println(s)
+}
