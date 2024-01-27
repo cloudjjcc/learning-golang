@@ -1,4 +1,4 @@
-package main
+package huawei
 
 import "fmt"
 
@@ -9,7 +9,7 @@ import "fmt"
 //链接：https://leetcode-cn.com/problems/corporate-flight-bookings
 //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-func main() {
+func maincorpFlightBookings() {
 	testArr := [][]int{{1, 2, 3}, {2, 3, 5}}
 	testN := 3
 	fmt.Println(corpFlightBookings(testArr, testN))

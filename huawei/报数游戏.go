@@ -1,4 +1,4 @@
-package main
+package huawei
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 //如果m小于等于1， 则输出“ERROR!”;
 //如果m大于等于100，则输出“ERROR!”；
 
-func main() {
+func maingame() {
 	for {
 		n := 0
 		s, b := fmt.Scanln(&n)

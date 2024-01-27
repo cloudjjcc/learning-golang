@@ -1,4 +1,4 @@
-package main
+package huawei
 
 import "fmt"
 
@@ -11,7 +11,7 @@ import "fmt"
 // String augend：被加数
 // 返回值：加法结果
 
-func main() {
+func mainaddLongInteger() {
 	fmt.Println(addLongInteger("99999999999999999999999999999999999999999999999999", "1"))
 }
 

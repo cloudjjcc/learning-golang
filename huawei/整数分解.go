@@ -1,4 +1,4 @@
-package main
+package huawei
 
 import (
 	"bytes"
@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func maingetResult() {
 	for {
 		i := 0
 		n, err := fmt.Scanln(&i)

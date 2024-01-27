@@ -1,4 +1,4 @@
-package main
+package huawei
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ import (
 //
 //注：测试用例保证输入参数的正确性，答题者无需验证。测试用例不止一组。
 
-func main() {
+func main2() {
 	n := 0
 	tmp := 0
 	for {

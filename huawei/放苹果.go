@@ -1,11 +1,11 @@
-package main
+package huawei
 
 import "fmt"
 
-//题目描述
-//把M个同样的苹果放在N个同样的盘子里，允许有的盘子空着不放，问共有多少种不同的分法？
-//（用K表示）5，1，1和1，5，1 是同一种分法。
-func main() {
+// 题目描述
+// 把M个同样的苹果放在N个同样的盘子里，允许有的盘子空着不放，问共有多少种不同的分法？
+// （用K表示）5，1，1和1，5，1 是同一种分法。
+func maindivideApple() {
 	for {
 		m, n := 0, 0
 		b, err := fmt.Scanln(&m, &n)
