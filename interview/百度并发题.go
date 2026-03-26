@@ -13,7 +13,7 @@ type Person struct {
 
 var p Person
 
-//var mu sync.Mutex
+// var mu sync.Mutex
 var (
 	updateCh = make(chan Person)
 	closeCh  = make(chan struct{})
