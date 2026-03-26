@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package order;
+option go_package = "./proto";
+message CreateOrderReq {
+  string item = 1;
+  int32 count = 2;
+}
+message CreateOrderResp{
+  string result = 1;
+}
+
+service OrderService {
+  rpc CreateOrder(CreateOrderReq)returns(CreateOrderResp);
+}

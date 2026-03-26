@@ -17,3 +17,7 @@ func printK(k int) {
 	fmt.Println(k)
 	printK(k + 1)
 }
+
+func Test_typeSize(t *testing.T) {
+	typeSize()
+}

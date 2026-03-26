@@ -42,3 +42,9 @@ func strLen() {
 	lenRunes := len([]rune(demoStr))
 	fmt.Printf("lenStr:%d,lenBytes:%d,countRunes:%d,lenRunes:%d\n", lenStr, lenBytes, countRunes, lenRunes)
 }
+
+//func modifyStr() {
+//	a := "hello world"
+//	a[0] = 'e'
+//	fmt.Println(a)
+//}

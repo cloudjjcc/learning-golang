@@ -1,11 +1,12 @@
 package pkgdemo
 
 import (
-	"github.com/stretchr/testify/assert"
 	"runtime"
 	"sync"
 	"sync/atomic"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMutex(t *testing.T) {
