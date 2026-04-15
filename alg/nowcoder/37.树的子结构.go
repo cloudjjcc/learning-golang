@@ -1,7 +1,7 @@
 package nowcoder
 
 import (
-	"github.com/cloudjjcc/go-exercises/datastructures"
+	"github.com/cloudjjcc/learning-golang/alg/datastructures"
 )
 
 func hasSubTree(tree1 *datastructures.TestTreeNode, tree2 *datastructures.TestTreeNode) bool {

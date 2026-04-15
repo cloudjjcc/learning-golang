@@ -2,7 +2,7 @@ package nowcoder
 
 import (
 	"fmt"
-	"github.com/cloudjjcc/go-exercises/datastructures"
+	"github.com/cloudjjcc/learning-golang/alg/datastructures"
 	"strconv"
 )
 

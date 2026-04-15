@@ -97,3 +97,12 @@ type bmap struct {
 	pad     uintptr
 	//overflow uintptr
 }
+
+func TestMapAddress(t *testing.T) {
+	type A struct {
+		Name string
+		Age  int
+	}
+	m := make(map[int]A)
+	m[1] = A{Name: "tom", Age: 18}
+}

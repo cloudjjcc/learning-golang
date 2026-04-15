@@ -13,4 +13,9 @@ func TestConst(t *testing.T) {
 		g
 	)
 	fmt.Println(d, e, g)
+	const (
+		aa = 1
+		bb
+	)
+	fmt.Println(bb)
 }

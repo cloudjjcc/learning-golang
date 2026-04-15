@@ -1,7 +1,7 @@
 package nowcoder
 
 import (
-	"github.com/cloudjjcc/go-exercises/datastructures"
+	"github.com/cloudjjcc/learning-golang/alg/datastructures"
 )
 
 // 题目描述

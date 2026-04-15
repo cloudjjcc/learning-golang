@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/cloudjjcc/go-exercises/datastructures"
 	"reflect"
 	"unsafe"
+
+	"github.com/cloudjjcc/learning-golang/alg/datastructures"
 )
 
 type animal interface {

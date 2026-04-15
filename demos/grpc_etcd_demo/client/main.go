@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/cloudjjcc/go-exercises/grpc_etcd_demo/client/order"
-	"github.com/cloudjjcc/go-exercises/grpc_etcd_demo/proto"
+	"github.com/cloudjjcc/learning-golang/grpc_etcd_demo/client/order"
+	"github.com/cloudjjcc/learning-golang/grpc_etcd_demo/proto"
 )
 
 func main() {

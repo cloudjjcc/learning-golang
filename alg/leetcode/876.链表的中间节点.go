@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/cloudjjcc/go-exercises/datastructures"
+	"github.com/cloudjjcc/learning-golang/alg/datastructures"
 )
 
 //给定一个带有头结点 head 的非空单链表，返回链表的中间结点。

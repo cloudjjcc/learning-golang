@@ -1,6 +1,8 @@
 package pkgdemo
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func updateValue() {
 	var val int
@@ -8,4 +10,5 @@ func updateValue() {
 	val1 = val
 	val2 = val1
 	fmt.Println(val1, val2)
+
 }

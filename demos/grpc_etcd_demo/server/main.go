@@ -9,9 +9,9 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/cloudjjcc/go-exercises/grpc_etcd_demo/proto"
-	"github.com/cloudjjcc/go-exercises/grpc_etcd_demo/register"
-	"github.com/cloudjjcc/go-exercises/grpc_etcd_demo/server/order"
+	"github.com/cloudjjcc/learning-golang/grpc_etcd_demo/proto"
+	"github.com/cloudjjcc/learning-golang/grpc_etcd_demo/register"
+	"github.com/cloudjjcc/learning-golang/grpc_etcd_demo/server/order"
 	"google.golang.org/grpc"
 )
 

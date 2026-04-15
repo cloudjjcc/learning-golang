@@ -9,6 +9,9 @@ type Student struct {
 func (s *Student) GetName() string {
 	return s.Name
 }
+func (s Student) GetName2() string {
+	return s.Name
+}
 
 type Score struct {
 	Math    int `json:"math"`

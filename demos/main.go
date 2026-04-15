@@ -1,8 +1,7 @@
 package main
 
-import "github.com/cloudjjcc/go-exercises/pkgdemo"
+import "github.com/cloudjjcc/learning-golang/pkgdemo"
 
 func main() {
-
 	pkgdemo.DemoErrGroup()
 }

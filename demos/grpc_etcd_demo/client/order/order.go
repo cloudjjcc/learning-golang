@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cloudjjcc/go-exercises/grpc_etcd_demo/proto"
+	"github.com/cloudjjcc/learning-golang/grpc_etcd_demo/proto"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	etcdresolver "go.etcd.io/etcd/client/v3/naming/resolver"
 	"google.golang.org/grpc"

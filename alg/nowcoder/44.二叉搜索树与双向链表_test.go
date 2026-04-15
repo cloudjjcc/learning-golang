@@ -2,7 +2,7 @@ package nowcoder
 
 import (
 	"fmt"
-	ds "github.com/cloudjjcc/go-exercises/datastructures"
+	ds "github.com/cloudjjcc/learning-golang/alg/datastructures"
 	"testing"
 )
 
